@@ -17,6 +17,27 @@
                     You are logged in!
                 </div>
             </div>
+
+            <div class = "card">
+                <div class = "card-header">Pregunta</div>
+                <div class = "card-body">
+                    <form action="">
+                        <div class="radio">
+                            <label><input type="radio" name="optradio">Respuesta 1</label>
+                          </div>
+                          <div class="radio">
+                            <label><input type="radio" name="optradio">Respuesta 2</label>
+                          </div>
+                          <div class="radio">
+                            <label><input type="radio" name="optradio">Respuesta 3</label>
+                          </div>
+                        <button type="submit" class="btn-sm btn-primary">Enviar</button>
+                    </form>
+                </div>
+                    
+            </div>
+            
+
         </div>
     </div>
 </div>

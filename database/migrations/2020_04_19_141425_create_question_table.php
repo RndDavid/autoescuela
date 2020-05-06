@@ -14,14 +14,16 @@ class CreateQuestionTable extends Migration
     public function up()
     {
         Schema::create('questions', function (Blueprint $table) {
-            $table->id('question_id');
-            $table->bigInteger('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->integer('level');
+            
+            $table->string('category');
             $table->string('question');
-            $table->string('hint');
+            $table->string('answer1');
+            $table->string('answer2');
+            $table->string('answer3');
+            $table->integer('correct_ans');
+            $table->text('hint');
             $table->boolean('correct')->nullable();
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }
@@ -33,7 +35,7 @@ class CreateQuestionTable extends Migration
      */
     public function down()
     {
-        $table->dropForeign('users_user_id_foreign');
+        //$table->dropForeign('users_user_id_foreign');
         Schema::dropIfExists('questions');
     }
 }
