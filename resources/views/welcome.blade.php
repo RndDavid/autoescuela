@@ -87,22 +87,16 @@
         <div id="content-wrapper">
             <!-- PAGE CONTENT -->
                 <div class="container-fluid">
-                    @if (Route::has('login'))
-                    <div class="top-right links">
-                        @auth
-                            <a href="{{ url('/home') }}">Home</a>
-                        @else
-                            <a href="{{ route('login') }}">Login</a>
-    
-                            @if (Route::has('register'))
-                                <a href="{{ route('register') }}">Register</a>
-                            @endif
-                        @endauth
-                    </div>
-                    @endif
+                    
                     <div class = "row justify-content-center align-items-center" style="height: 80vh">
-                        <a href="" class="button1 bouncy align-middle">Acceder</a>
-                        <a href="" class="button1 bouncy align-middle" style="animation-delay:0.07s">Invitado</a>
+                        @auth
+                            <a href="{{ url('/home') }}" class="btn btn-primary bouncy align-middle">Acceder</a>
+                        @else
+                            <a href="{{ route('login') }}" class="btn btn-primary bouncy align-middle mr-5">Iniciar sesión</a>
+                                @if (Route::has('register'))
+                                    <a href="{{ route('register') }}" class="btn btn-primary bouncy align-middle" style="animation-delay:0.07s">Registrarse</a>
+                                @endif
+                        @endauth
                     </div>
                 </div>
             <!-- PAGE CONTENT -->

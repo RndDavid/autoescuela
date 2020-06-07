@@ -14,7 +14,7 @@ class CreateQuestionTable extends Migration
     public function up()
     {
         Schema::create('questions', function (Blueprint $table) {
-            
+            $table->id();
             $table->string('category');
             $table->string('question');
             $table->string('answer1');
@@ -22,8 +22,8 @@ class CreateQuestionTable extends Migration
             $table->string('answer3');
             $table->integer('correct_ans');
             $table->text('hint');
-            $table->boolean('correct')->nullable();
             $table->string('image')->nullable();
+            $table->integer('index')->nullable();
             $table->timestamps();
         });
     }

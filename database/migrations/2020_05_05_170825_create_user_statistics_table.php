@@ -14,10 +14,11 @@ class CreateUserStatisticsTable extends Migration
     public function up()
     {
         Schema::create('user_statistics', function (Blueprint $table) {
-            $table->id('user_id')->unsigned();
+            $table->id();
+            $table->bigInteger('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->integer('tests_passed')->unsigned();
-            $table->integer('tests_failed')->unsigned();
+            $table->integer('questions_passed')->unsigned();
+            $table->integer('questions_failed')->unsigned();
             $table->timestamps();
         });
     }
